@@ -25,8 +25,8 @@
                         <MudStack Class="align-center">
                             <MudText Typo="Typo.h4" Class="lucky">@_player1?.Name</MudText>
                             <MudStack Row="true">
-                                <MudChip Class="banger" Icon="@Icons.Material.Filled.ThumbUp" Text="@($"{_player1?.WinCount} Wins")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Success"></MudChip>
-                                <MudChip Class="banger" Icon="@Icons.Material.Filled.ThumbDown" Text="@($"{_player1?.LossCount} Losses")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Error"></MudChip>
+                                <MudChip T="string" Class="banger" Icon="@Icons.Material.Filled.ThumbUp" Text="@($"{_player1?.WinCount} Wins")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Success"></MudChip>
+                                <MudChip T="string" Class="banger" Icon="@Icons.Material.Filled.ThumbDown" Text="@($"{_player1?.LossCount} Losses")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Error"></MudChip>
                             </MudStack>
                         </MudStack>
                     </MudPaper>
@@ -37,8 +37,8 @@
                         <MudStack Class="align-center">
                             <MudText Typo="Typo.h4" Class="lucky">@_player2?.Name</MudText>
                             <MudStack Row="true">
-                                <MudChip Class="banger" Icon="@Icons.Material.Filled.ThumbUp" Text="@($"{_player2?.WinCount} Wins")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Success"></MudChip>
-                                <MudChip Class="banger" Icon="@Icons.Material.Filled.ThumbDown" Text="@($"{_player2?.LossCount} Losses")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Error"></MudChip>
+                                <MudChip T="string" Class="banger" Icon="@Icons.Material.Filled.ThumbUp" Text="@($"{_player2?.WinCount} Wins")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Success"></MudChip>
+                                <MudChip T="string" Class="banger" Icon="@Icons.Material.Filled.ThumbDown" Text="@($"{_player2?.LossCount} Losses")" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Error"></MudChip>
                             </MudStack>
                         </MudStack>
                     </MudPaper>
@@ -186,21 +186,21 @@
                             <MudPaper Class="flex-grow-1 pl-2" Elevation="0">
                                 <MudText Typo="Typo.h5" Class="d-block pathway">Started</MudText>
                             </MudPaper>
-                            <MudChip Text="@($"{@_latestUpdate.DateStarted}")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
+                            <MudChip T="string" Text="@($"{@_latestUpdate.DateStarted}")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
                         </MudPaper>
 
                         <MudPaper Class="d-flex flex-grow-1 pa-1 mb-2" Elevation="0">
                             <MudPaper Class="flex-grow-1 pl-2" Elevation="0">
                                 <MudText Typo="Typo.h5" Class="d-block pathway">Uptime</MudText>
                             </MudPaper>
-                            <MudChip Text="@_latestUpdate.TimeUp.ToString("hh\\:mm\\:ss")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
+                            <MudChip T="string" Text="@_latestUpdate.TimeUp.ToString("hh\\:mm\\:ss")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
                         </MudPaper>
 
                         <MudPaper Class="d-flex flex-grow-1 pa-1 mb-2" Elevation="0">
                             <MudPaper Class="flex-grow-1 pl-2" Elevation="0">
                                 <MudText Typo="Typo.h5" Class="d-block pathway">Games completed</MudText>
                             </MudPaper>
-                            <MudChip Text="@_latestUpdate.GamesCompleted.ToString("N0")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
+                            <MudChip T="string" Text="@_latestUpdate.GamesCompleted.ToString("N0")" Class="lucky" Style="font-size: 1.5em;" Variant="Variant.Filled" Color="Color.Info"></MudChip>
                         </MudPaper>
                     }
                 </MudItem>
@@ -215,7 +215,7 @@
             @foreach (var player in _playersOnline)
             {
                 <MudPaper Class="d-flex flex-grow-1 pa-1 mb-2" Elevation="0">
-                    <MudChip Text="@($"{player.PercentWon}%")" Class="lucky" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Info" SelectedColor="Color.Primary"></MudChip>
+                    <MudChip T="string" Text="@($"{player.PercentWon}%")" Class="lucky" Style="font-size: 2em;" Variant="Variant.Filled" Color="Color.Info" SelectedColor="Color.Primary"></MudChip>
                     <MudPaper Class="flex-grow-1 pl-2" Elevation="0">
                         <MudText Typo="Typo.h5" Class="lucky">@player.Name</MudText>
                     </MudPaper>
@@ -242,7 +242,7 @@
 
     private ChartOptions _options = new()
         {
-            DisableLegend = true,
+            ShowLegend = false,
             InterpolationOption = InterpolationOption.NaturalSpline,
             LineStrokeWidth = 8
         };
